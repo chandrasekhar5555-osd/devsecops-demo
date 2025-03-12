@@ -120,11 +120,8 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           load: true
-          
-      - name: Update Vulnerable Libraries (libxml2)
-        run: |
-          apk update && apk upgrade libxml2
-          
+         
+         
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
